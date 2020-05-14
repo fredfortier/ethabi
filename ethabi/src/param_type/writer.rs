@@ -10,6 +10,7 @@ use crate::ParamType;
 use std::boxed::Box;
 use std::string::String;
 use std::borrow::ToOwned;
+use std::prelude::v1::Vec;
 
 /// Output formatter for param type.
 pub struct Writer;
@@ -38,6 +39,7 @@ impl Writer {
 mod tests {
 	use super::Writer;
 	use crate::ParamType;
+	use std::prelude::v1::{ToOwned, Box};
 
 	#[test]
 	fn test_write_param() {

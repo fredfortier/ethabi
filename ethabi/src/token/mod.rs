@@ -18,6 +18,7 @@ pub use self::token::Token;
 use crate::{Error, ParamType};
 pub use std::vec::Vec;
 pub use std::string::String;
+use std::prelude::v1::Box;
 
 /// This trait should be used to parse string values as tokens.
 pub trait Tokenizer {

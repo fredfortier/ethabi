@@ -32,6 +32,7 @@ extern crate hex_literal;
 extern crate paste;
 
 extern crate ethereum_types;
+extern crate uint;
 
 use std::vec::Vec;
 //use alloc::vec::Vec;
