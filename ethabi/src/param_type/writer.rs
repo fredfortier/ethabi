@@ -7,6 +7,9 @@
 // except according to those terms.
 
 use crate::ParamType;
+use std::boxed::Box;
+use std::string::String;
+use std::borrow::ToOwned;
 
 /// Output formatter for param type.
 pub struct Writer;

@@ -10,6 +10,7 @@
 
 use super::Writer;
 use std::fmt;
+use std::boxed::Box;
 
 /// Function and event param types.
 #[derive(Debug, Clone, PartialEq)]

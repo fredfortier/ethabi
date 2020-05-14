@@ -9,6 +9,9 @@
 use crate::param_type::{ParamType, Writer};
 use crate::Hash;
 use tiny_keccak::Keccak;
+use std::vec::Vec;
+use std::string::String;
+use std::slice::Join;
 
 pub fn short_signature(name: &str, params: &[ParamType]) -> [u8; 4] {
 	let mut result = [0u8; 4];

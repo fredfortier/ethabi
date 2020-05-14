@@ -12,6 +12,8 @@ use crate::{ParamType, TupleParam};
 use serde::de::{Error, MapAccess, Visitor};
 use serde::{Deserialize, Deserializer};
 use std::fmt;
+use std::string::String;
+//use alloc::string::String;
 
 /// Event param specification.
 #[derive(Debug, Clone, PartialEq)]

@@ -25,6 +25,9 @@ pub trait ParseLog {
 	fn parse_log(&self, log: RawLog) -> Result<Self::Log>;
 }
 
+use std::vec::Vec;
+use std::string::String;
+
 /// Ethereum log.
 #[derive(Debug, PartialEq, Clone)]
 pub struct RawLog {

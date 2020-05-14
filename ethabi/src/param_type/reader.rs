@@ -7,6 +7,9 @@
 // except according to those terms.
 
 use crate::{Error, ParamType};
+use std::string::String;
+use std::boxed::Box;
+use std::borrow::ToOwned;
 
 /// Used to convert param type represented as a string to rust structure.
 pub struct Reader;
