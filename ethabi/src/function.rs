@@ -13,7 +13,12 @@ use std::string::ToString;
 use crate::signature::short_signature;
 use crate::{decode, encode, Bytes, Error, Param, ParamType, Result, Token};
 use serde::Deserialize;
-
+use std::vec::Vec;
+use std::string::String;
+/*
+use alloc::vec::Vec;
+use alloc::string::String;
+*/
 /// Contract function specification.
 #[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Function {

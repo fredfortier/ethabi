@@ -7,6 +7,7 @@
 // except according to those terms.
 
 use std::{fmt, num, result::Result as StdResult, string};
+use std::string::ToString;
 
 /// Ethabi result type
 pub type Result<T> = std::result::Result<T, Error>;

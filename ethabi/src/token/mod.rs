@@ -16,6 +16,8 @@ pub use self::lenient::LenientTokenizer;
 pub use self::strict::StrictTokenizer;
 pub use self::token::Token;
 use crate::{Error, ParamType};
+pub use std::vec::Vec;
+pub use std::string::String;
 
 /// This trait should be used to parse string values as tokens.
 pub trait Tokenizer {
