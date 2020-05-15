@@ -13,8 +13,8 @@ hex = { version = "2.0", package = "rustc-hex" }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 tiny-keccak = "1.4"
-ethereum-types = { git = "https://github.com/fredfortier/parity-common.git", default-features = false }
-uint = { version = "0.8.2", default-features = false}
+ethereum-types = { git = "https://github.com/fredfortier/parity-common.git" }
+uint = { version = "0.8.2"}
 
 
 [dev-dependencies]
