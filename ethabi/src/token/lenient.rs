@@ -40,7 +40,7 @@ impl Tokenizer for LenientTokenizer {
 			return result;
 		}
 
-		let uint = Uint::from_dec_str(value)?;
+		let uint = Uint::from_dec_str(value).unwrap();
 		Ok(uint.into())
 	}
 
@@ -53,7 +53,7 @@ impl Tokenizer for LenientTokenizer {
 			return result;
 		}
 
-		let abs = Uint::from_dec_str(value.trim_start_matches('-'))?;
+		let abs = Uint::from_dec_str(value.trim_start_matches('-')).unwrap();
 		let max = Uint::max_value() / 2;
 		let int = if value.starts_with('-') {
 			if abs.is_zero() {
