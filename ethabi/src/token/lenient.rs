@@ -9,9 +9,6 @@
 use crate::errors::Error;
 use crate::token::{StrictTokenizer, Tokenizer};
 use crate::Uint;
-use uint::FromDecStrErr;
-use std::vec::Vec;
-use std::string::String;
 
 /// Tries to parse string as a token. Does not require string to clearly represent the value.
 pub struct LenientTokenizer;
@@ -43,7 +40,7 @@ impl Tokenizer for LenientTokenizer {
 			return result;
 		}
 
-		let uint = Uint::from_dec_str(value).unwrap(); // TODO: Handle error after upgrading ethereum-types
+		let uint = Uint::from_dec_str(value)?;
 		Ok(uint.into())
 	}
 
@@ -56,7 +53,7 @@ impl Tokenizer for LenientTokenizer {
 			return result;
 		}
 
-		let abs = Uint::from_dec_str(value.trim_start_matches('-')).unwrap(); // TODO: Handle error after upgrading ethereum-types
+		let abs = Uint::from_dec_str(value.trim_start_matches('-'))?;
 		let max = Uint::max_value() / 2;
 		let int = if value.starts_with('-') {
 			if abs.is_zero() {

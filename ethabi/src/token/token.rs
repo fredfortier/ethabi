@@ -8,13 +8,8 @@
 
 //! Ethereum ABI params.
 use crate::{Address, Bytes, FixedBytes, ParamType, Uint};
-//use alloc::fmt;
 use hex::ToHex;
 use std::fmt;
-use std::vec::Vec;
-use std::string::String;
-use std::vec;
-use std::slice::Join;
 
 /// Ethereum ABI params.
 #[derive(Debug, PartialEq, Clone)]

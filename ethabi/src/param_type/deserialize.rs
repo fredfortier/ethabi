@@ -10,8 +10,6 @@ use super::{ParamType, Reader};
 use serde::de::{Error as SerdeError, Visitor};
 use serde::{Deserialize, Deserializer};
 use std::fmt;
-use std::string::String;
-use std::boxed::Box;
 
 impl<'a> Deserialize<'a> for ParamType {
 	fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>

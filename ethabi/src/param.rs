@@ -13,9 +13,6 @@ use serde::{Deserialize, Deserializer};
 use std::fmt;
 
 use crate::{ParamType, TupleParam};
-use std::string::String;
-use std::prelude::v1::{Vec, Box};
-//use alloc::string::String;
 
 /// Function param.
 #[derive(Debug, Clone, PartialEq)]
@@ -112,10 +109,8 @@ impl<'a> Visitor<'a> for ParamVisitor {
 
 #[cfg(test)]
 mod tests {
-	use super::*;
 	use crate::{Param, ParamType};
 	use serde_json;
-	use std::prelude::v1::ToOwned;
 
 	#[test]
 	fn param_deserialization() {

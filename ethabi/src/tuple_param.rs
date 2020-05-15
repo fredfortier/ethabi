@@ -12,8 +12,6 @@ use crate::ParamType;
 use serde::de::{Error, MapAccess, Visitor};
 use serde::{Deserialize, Deserializer};
 use std::fmt;
-use std::string::String;
-use std::prelude::v1::{Vec, Box};
 
 /// Tuple params specification
 #[derive(Debug, Clone, PartialEq)]

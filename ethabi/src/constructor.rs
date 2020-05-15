@@ -9,8 +9,6 @@
 //! Contract constructor call builder.
 use crate::{encode, Bytes, Error, Param, ParamType, Result, Token};
 use serde::Deserialize;
-use std::vec::Vec;
-//use alloc::vec::Vec;
 
 /// Contract constructor specification.
 #[derive(Debug, Clone, PartialEq, Deserialize)]

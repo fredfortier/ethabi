@@ -9,9 +9,6 @@
 use crate::errors::Error;
 use crate::token::Tokenizer;
 use hex::FromHex;
-use std::vec::Vec;
-use std::string::String;
-use std::borrow::ToOwned;
 
 /// Tries to parse string as a token. Require string to clearly represent the value.
 pub struct StrictTokenizer;

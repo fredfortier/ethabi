@@ -10,8 +10,6 @@
 
 use crate::util::pad_u32;
 use crate::{Bytes, Token, Word};
-use std::vec::Vec;
-//use alloc::vec::Vec;
 
 fn pad_bytes(bytes: &[u8]) -> Vec<Word> {
 	let mut result = vec![pad_u32(bytes.len() as u32)];

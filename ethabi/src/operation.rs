@@ -13,8 +13,6 @@ use serde::de::Error as SerdeError;
 use serde::{Deserialize, Deserializer};
 use serde_json::value::from_value;
 use serde_json::Value;
-use std::string::String;
-use std::string::ToString;
 
 /// Operation type.
 #[derive(Clone, Debug, PartialEq)]

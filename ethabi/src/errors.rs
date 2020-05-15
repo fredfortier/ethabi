@@ -7,8 +7,6 @@
 // except according to those terms.
 
 use std::{fmt, num, result::Result as StdResult, string};
-use std::string::{ToString, String};
-use uint::FromDecStrErr;
 
 /// Ethabi result type
 pub type Result<T> = std::result::Result<T, Error>;
@@ -60,6 +58,11 @@ impl fmt::Display for Error {
 	}
 }
 
+impl From<&str> for Error {
+	fn from(err: &str) -> Self {
+		Error::Other(err.to_owned())
+	}
+}
 impl From<String> for Error {
 	fn from(err: String) -> Self {
 		Error::Other(err)
@@ -75,8 +78,9 @@ impl From<num::ParseIntError> for Error {
 		Error::ParseInt(err)
 	}
 }
-impl From<FromDecStrErr> for Error {
-	fn from(err: FromDecStrErr) -> Self {
+impl From<uint::FromDecStrErr> for Error {
+	fn from(err: uint::FromDecStrErr) -> Self {
+		use uint::FromDecStrErr::*;
 		match err {
 			InvalidCharacter => Error::Other("Uint parse error: InvalidCharacter".into()),
 			InvalidLength => Error::Other("Uint parse error: InvalidLength".into()),

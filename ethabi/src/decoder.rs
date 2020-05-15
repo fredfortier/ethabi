@@ -10,8 +10,7 @@
 
 use crate::util::slice_data;
 use crate::{Error, ParamType, Token, Word};
-use std::vec::Vec;
-use std::string::String;
+
 struct DecodeResult {
 	token: Token,
 	new_offset: usize,
@@ -35,7 +34,7 @@ fn as_u32(slice: &Word) -> Result<u32, Error> {
 
 fn as_bool(slice: &Word) -> Result<bool, Error> {
 	if !slice[..31].iter().all(|x| *x == 0) {
-		return Err(Error::InvalidData.into());
+		return Err(Error::InvalidData);
 	}
 
 	Ok(slice[31] == 1)
@@ -54,7 +53,7 @@ pub fn decode(types: &[ParamType], data: &[u8]) -> Result<Vec<Token>, Error> {
 		));
 	}
 	let slices = slice_data(data)?;
-    let mut tokens = Vec::with_capacity(types.len());
+	let mut tokens = Vec::with_capacity(types.len());
 	let mut offset = 0;
 	for param in types {
 		let res = decode_param(param, &slices, offset)?;
@@ -225,10 +224,8 @@ fn decode_param(param: &ParamType, slices: &[Word], offset: usize) -> Result<Dec
 
 #[cfg(test)]
 mod tests {
-	use super::*;
 	use crate::{decode, ParamType, Token};
 	use hex_literal::hex;
-	use std::prelude::v1::{Box, ToOwned};
 
 	#[test]
 	fn decode_from_empty_byte_slice() {

@@ -10,8 +10,6 @@
 
 use super::Writer;
 use std::fmt;
-use std::boxed::Box;
-use std::prelude::v1::Vec;
 
 /// Function and event param types.
 #[derive(Debug, Clone, PartialEq)]
@@ -69,9 +67,7 @@ impl ParamType {
 
 #[cfg(test)]
 mod tests {
-	use super::*;
 	use crate::ParamType;
-	use std::prelude::v1::ToOwned;
 
 	#[test]
 	fn test_param_type_display() {

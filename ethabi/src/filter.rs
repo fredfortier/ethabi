@@ -10,12 +10,7 @@ use crate::{Hash, Token};
 use serde::{Serialize, Serializer};
 use serde_json::Value;
 use std::ops;
-use std::vec::Vec;
-use std::string::String;
-/*
-use alloc::vec::Vec;
-use alloc::vec;
-*/
+
 /// Raw topic filter.
 #[derive(Debug, PartialEq, Default)]
 pub struct RawTopicFilter {
