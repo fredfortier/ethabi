@@ -16,10 +16,6 @@ use std::vec::Vec;
 use crate::{Bytes, decode, encode, Error, Param, ParamType, Result, Token};
 use crate::signature::short_signature;
 
-/*
-use alloc::vec::Vec;
-use alloc::string::String;
-*/
 /// Contract function specification.
 #[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Function {

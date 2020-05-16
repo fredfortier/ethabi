@@ -12,6 +12,7 @@
 #![no_std]
 #![feature(slice_concat_trait)]
 
+#[macro_use]
 extern crate sgx_tstd as std;
 
 #[macro_use]
@@ -28,7 +29,7 @@ extern crate serde;
 extern crate serde_json;
 #[macro_use]
 extern crate tiny_keccak;
-extern crate uint;
+// extern crate uint;
 
 use std::vec::Vec;
 

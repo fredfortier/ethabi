@@ -7,12 +7,11 @@
 // except according to those terms.
 
 //! Ethereum ABI params.
-//use alloc::fmt;
 use hex::ToHex;
 use std::fmt;
 use std::slice::Join;
 use std::string::String;
-use std::vec;
+// use std::vec;
 use std::vec::Vec;
 
 use crate::{Address, Bytes, FixedBytes, ParamType, Uint};

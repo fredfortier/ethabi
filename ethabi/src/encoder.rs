@@ -13,8 +13,6 @@ use std::vec::Vec;
 use crate::{Bytes, Token, Word};
 use crate::util::pad_u32;
 
-//use alloc::vec::Vec;
-
 fn pad_bytes(bytes: &[u8]) -> Vec<Word> {
 	let mut result = vec![pad_u32(bytes.len() as u32)];
 	result.extend(pad_fixed_bytes(bytes));
