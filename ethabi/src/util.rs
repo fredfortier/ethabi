@@ -8,9 +8,9 @@
 
 //! Utils used by different modules.
 
-use crate::{Error, Word};
 use std::vec::Vec;
-//use alloc::vec::Vec;
+
+use crate::{Error, Word};
 
 /// Converts a vector of bytes with len equal n * 32, to a vector of slices.
 pub fn slice_data(data: &[u8]) -> Result<Vec<Word>, Error> {
@@ -38,8 +38,9 @@ pub fn pad_u32(value: u32) -> Word {
 
 #[cfg(test)]
 mod tests {
-	use super::pad_u32;
 	use hex_literal::hex;
+
+	use super::pad_u32;
 
 	#[test]
 	fn test_pad_u32() {

@@ -6,16 +6,14 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-use crate::{Hash, Token};
 use serde::{Serialize, Serializer};
 use serde_json::Value;
 use std::ops;
-use std::vec::Vec;
 use std::string::String;
-/*
-use alloc::vec::Vec;
-use alloc::vec;
-*/
+use std::vec::Vec;
+
+use crate::{Hash, Token};
+
 /// Raw topic filter.
 #[derive(Debug, PartialEq, Default)]
 pub struct RawTopicFilter {
@@ -155,9 +153,11 @@ impl<T> ops::Index<usize> for Topic<T> {
 
 #[cfg(test)]
 mod tests {
-	use super::{Topic, TopicFilter};
-	use crate::Hash;
 	use serde_json;
+
+	use crate::Hash;
+
+	use super::{Topic, TopicFilter};
 
 	fn hash(s: &'static str) -> Hash {
 		s.parse().unwrap()

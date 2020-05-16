@@ -6,9 +6,10 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-use crate::{decode, encode, ParamType, Token};
 use hex_literal::hex;
 use paste;
+
+use crate::{decode, encode, ParamType, Token};
 
 macro_rules! test_encode_decode {
 	(name: $name:tt, types: $types:expr, tokens: $tokens:expr, data: $data:tt) => {

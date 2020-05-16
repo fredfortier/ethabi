@@ -13,28 +13,41 @@
 #![feature(slice_concat_trait)]
 
 #[macro_use]
-extern crate sgx_tstd as std;
-extern crate rustc_hex as hex;
-extern crate serde_json;
-extern crate tiny_keccak;
-
-#[macro_use]
-extern crate serde;
-
-#[macro_use]
 extern crate error_chain;
-
+extern crate ethereum_types;
 #[cfg(test)]
 #[macro_use]
 extern crate hex_literal;
-
 #[cfg(test)]
 extern crate paste;
-
-extern crate ethereum_types;
+extern crate rustc_hex as hex;
+#[macro_use]
+extern crate serde;
+extern crate serde_json;
+#[macro_use]
+extern crate sgx_tstd as std;
+extern crate tiny_keccak;
 extern crate uint;
 
 use std::vec::Vec;
+
+pub use crate::{
+	constructor::Constructor,
+	contract::{Contract, Events, Functions},
+	decoder::decode,
+	encoder::encode,
+	errors::{Error, Result},
+	event::Event,
+	event_param::EventParam,
+	filter::{RawTopicFilter, Topic, TopicFilter},
+	function::Function,
+	log::{Log, LogFilter, LogParam, ParseLog, RawLog},
+	param::Param,
+	param_type::ParamType,
+	token::Token,
+	tuple_param::TupleParam,
+};
+
 //use alloc::vec::Vec;
 
 mod constructor;
@@ -57,23 +70,6 @@ mod util;
 
 #[cfg(test)]
 mod tests;
-
-pub use crate::{
-	constructor::Constructor,
-	contract::{Contract, Events, Functions},
-	decoder::decode,
-	encoder::encode,
-	errors::{Error, Result},
-	event::Event,
-	event_param::EventParam,
-	filter::{RawTopicFilter, Topic, TopicFilter},
-	function::Function,
-	log::{Log, LogFilter, LogParam, ParseLog, RawLog},
-	param::Param,
-	param_type::ParamType,
-	token::Token,
-	tuple_param::TupleParam,
-};
 
 /// ABI word.
 pub type Word = [u8; 32];

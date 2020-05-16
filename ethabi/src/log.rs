@@ -6,6 +6,9 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
+use std::string::String;
+use std::vec::Vec;
+
 use crate::{Bytes, Hash, Result, Token, TopicFilter};
 
 /// Common filtering functions that are available for any event.
@@ -24,9 +27,6 @@ pub trait ParseLog {
 	/// parse the associated `Log` type from a `RawLog`
 	fn parse_log(&self, log: RawLog) -> Result<Self::Log>;
 }
-
-use std::vec::Vec;
-use std::string::String;
 
 /// Ethereum log.
 #[derive(Debug, PartialEq, Clone)]

@@ -8,14 +8,14 @@
 
 //! Function param.
 
-use serde::de::{Error, MapAccess, Visitor};
 use serde::{Deserialize, Deserializer};
+use serde::de::{Error, MapAccess, Visitor};
 use std::fmt;
+use std::prelude::v1::Box;
+use std::string::String;
+use std::vec::Vec;
 
 use crate::{ParamType, TupleParam};
-use std::string::String;
-use std::prelude::v1::{Vec, Box};
-//use alloc::string::String;
 
 /// Function param.
 #[derive(Debug, Clone, PartialEq)]
@@ -112,10 +112,12 @@ impl<'a> Visitor<'a> for ParamVisitor {
 
 #[cfg(test)]
 mod tests {
-	use super::*;
-	use crate::{Param, ParamType};
 	use serde_json;
 	use std::prelude::v1::ToOwned;
+
+	use crate::{Param, ParamType};
+
+	use super::*;
 
 	#[test]
 	fn param_deserialization() {

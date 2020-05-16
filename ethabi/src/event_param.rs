@@ -8,12 +8,15 @@
 
 //! Event param specification.
 
-use crate::{ParamType, TupleParam};
-use serde::de::{Error, MapAccess, Visitor};
 use serde::{Deserialize, Deserializer};
+use serde::de::{Error, MapAccess, Visitor};
 use std::fmt;
+use std::prelude::v1::{Box};
+use std::vec::Vec;
 use std::string::String;
-use std::prelude::v1::{Vec, Box};
+
+use crate::{ParamType, TupleParam};
+
 //use alloc::string::String;
 
 /// Event param specification.
@@ -100,10 +103,12 @@ impl<'a> Visitor<'a> for EventParamVisitor {
 
 #[cfg(test)]
 mod tests {
-	use super::*;
-	use crate::{EventParam, ParamType};
 	use serde_json;
 	use std::prelude::v1::ToOwned;
+
+	use crate::{EventParam, ParamType};
+
+	use super::*;
 
 	#[test]
 	fn event_param_deserialization() {

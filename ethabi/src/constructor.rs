@@ -7,9 +7,11 @@
 // except according to those terms.
 
 //! Contract constructor call builder.
-use crate::{encode, Bytes, Error, Param, ParamType, Result, Token};
 use serde::Deserialize;
 use std::vec::Vec;
+
+use crate::{Bytes, encode, Error, Param, ParamType, Result, Token};
+
 //use alloc::vec::Vec;
 
 /// Contract constructor specification.

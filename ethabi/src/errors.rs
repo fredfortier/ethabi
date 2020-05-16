@@ -7,7 +7,7 @@
 // except according to those terms.
 
 use std::{fmt, num, result::Result as StdResult, string};
-use std::string::{ToString, String};
+use std::string::{String, ToString};
 use uint::FromDecStrErr;
 
 /// Ethabi result type

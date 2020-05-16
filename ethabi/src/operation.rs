@@ -8,13 +8,14 @@
 
 //! Operation type.
 
-use crate::{Constructor, Event, Function};
-use serde::de::Error as SerdeError;
 use serde::{Deserialize, Deserializer};
-use serde_json::value::from_value;
+use serde::de::Error as SerdeError;
 use serde_json::Value;
+use serde_json::value::from_value;
 use std::string::String;
 use std::string::ToString;
+
+use crate::{Constructor, Event, Function};
 
 /// Operation type.
 #[derive(Clone, Debug, PartialEq)]
@@ -65,9 +66,11 @@ impl<'a> Deserialize<'a> for Operation {
 
 #[cfg(test)]
 mod tests {
-	use super::Operation;
-	use crate::{Function, Param, ParamType};
 	use serde_json;
+
+	use crate::{Function, Param, ParamType};
+
+	use super::Operation;
 
 	#[test]
 	fn deserialize_operation() {

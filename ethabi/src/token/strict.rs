@@ -6,12 +6,13 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
+use hex::FromHex;
+use std::borrow::ToOwned;
+use std::string::String;
+use std::vec::Vec;
+
 use crate::errors::Error;
 use crate::token::Tokenizer;
-use hex::FromHex;
-use std::vec::Vec;
-use std::string::String;
-use std::borrow::ToOwned;
 
 /// Tries to parse string as a token. Require string to clearly represent the value.
 pub struct StrictTokenizer;
@@ -72,8 +73,8 @@ impl Tokenizer for StrictTokenizer {
 
 #[cfg(test)]
 mod tests {
-	use crate::token::{StrictTokenizer, Token, Tokenizer};
 	use crate::ParamType;
+	use crate::token::{StrictTokenizer, Token, Tokenizer};
 
 	#[test]
 	fn tokenize_address() {

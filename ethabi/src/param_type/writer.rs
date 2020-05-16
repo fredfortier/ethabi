@@ -6,11 +6,12 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-use crate::ParamType;
+use std::borrow::ToOwned;
 use std::boxed::Box;
 use std::string::String;
-use std::borrow::ToOwned;
-use std::prelude::v1::Vec;
+use std::vec::Vec;
+
+use crate::ParamType;
 
 /// Output formatter for param type.
 pub struct Writer;
@@ -37,9 +38,11 @@ impl Writer {
 
 #[cfg(test)]
 mod tests {
-	use super::Writer;
+	use std::prelude::v1::{Box, ToOwned};
+
 	use crate::ParamType;
-	use std::prelude::v1::{ToOwned, Box};
+
+	use super::Writer;
 
 	#[test]
 	fn test_write_param() {

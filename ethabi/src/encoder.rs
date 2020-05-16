@@ -8,9 +8,11 @@
 
 //! ABI encoder.
 
-use crate::util::pad_u32;
-use crate::{Bytes, Token, Word};
 use std::vec::Vec;
+
+use crate::{Bytes, Token, Word};
+use crate::util::pad_u32;
+
 //use alloc::vec::Vec;
 
 fn pad_bytes(bytes: &[u8]) -> Vec<Word> {
@@ -178,9 +180,10 @@ fn encode_token(token: &Token) -> Mediate {
 
 #[cfg(test)]
 mod tests {
-	use crate::util::pad_u32;
-	use crate::{encode, Token};
 	use hex_literal::hex;
+
+	use crate::{encode, Token};
+	use crate::util::pad_u32;
 
 	#[test]
 	fn encode_address() {

@@ -8,12 +8,14 @@
 
 //! Tuple param type.
 
-use crate::ParamType;
-use serde::de::{Error, MapAccess, Visitor};
 use serde::{Deserialize, Deserializer};
+use serde::de::{Error, MapAccess, Visitor};
 use std::fmt;
+use std::prelude::v1::Box;
 use std::string::String;
-use std::prelude::v1::{Vec, Box};
+use std::vec::Vec;
+
+use crate::ParamType;
 
 /// Tuple params specification
 #[derive(Debug, Clone, PartialEq)]
@@ -91,8 +93,9 @@ impl<'a> Visitor<'a> for TupleParamVisitor {
 
 #[cfg(test)]
 mod tests {
-	use crate::{ParamType, TupleParam};
 	use serde_json;
+
+	use crate::{ParamType, TupleParam};
 
 	#[test]
 	fn tuple_param_deserialization() {

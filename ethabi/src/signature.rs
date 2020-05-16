@@ -6,12 +6,13 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-use crate::param_type::{ParamType, Writer};
-use crate::Hash;
-use tiny_keccak::Keccak;
-use std::vec::Vec;
-use std::string::String;
 use std::slice::Join;
+use std::string::String;
+use std::vec::Vec;
+use tiny_keccak::Keccak;
+
+use crate::Hash;
+use crate::param_type::{ParamType, Writer};
 
 pub fn short_signature(name: &str, params: &[ParamType]) -> [u8; 4] {
 	let mut result = [0u8; 4];
@@ -37,9 +38,11 @@ fn fill_signature(name: &str, params: &[ParamType], result: &mut [u8]) {
 
 #[cfg(test)]
 mod tests {
-	use super::short_signature;
-	use crate::ParamType;
 	use hex_literal::hex;
+
+	use crate::ParamType;
+
+	use super::short_signature;
 
 	#[test]
 	fn test_signature() {

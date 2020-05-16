@@ -19,10 +19,6 @@ use crate::{
 
 use std::vec::Vec;
 use std::string::String;
-/*
-use alloc::vec::Vec;
-use alloc::string::String;
-*/
 
 /// Contract event.
 #[derive(Clone, Debug, PartialEq, Deserialize)]

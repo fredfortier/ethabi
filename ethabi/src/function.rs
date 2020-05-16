@@ -8,13 +8,14 @@
 
 //! Contract function call builder.
 
-use std::string::ToString;
-
-use crate::signature::short_signature;
-use crate::{decode, encode, Bytes, Error, Param, ParamType, Result, Token};
 use serde::Deserialize;
-use std::vec::Vec;
 use std::string::String;
+use std::string::ToString;
+use std::vec::Vec;
+
+use crate::{Bytes, decode, encode, Error, Param, ParamType, Result, Token};
+use crate::signature::short_signature;
+
 /*
 use alloc::vec::Vec;
 use alloc::string::String;
@@ -88,8 +89,9 @@ impl Function {
 
 #[cfg(test)]
 mod tests {
-	use crate::{Function, Param, ParamType, Token};
 	use hex_literal::hex;
+
+	use crate::{Function, Param, ParamType, Token};
 
 	#[test]
 	fn test_function_encode_call() {

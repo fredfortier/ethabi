@@ -8,10 +8,12 @@
 
 //! ABI decoder.
 
-use crate::util::slice_data;
-use crate::{Error, ParamType, Token, Word};
-use std::vec::Vec;
 use std::string::String;
+use std::vec::Vec;
+
+use crate::{Error, ParamType, Token, Word};
+use crate::util::slice_data;
+
 struct DecodeResult {
 	token: Token,
 	new_offset: usize,
@@ -225,10 +227,13 @@ fn decode_param(param: &ParamType, slices: &[Word], offset: usize) -> Result<Dec
 
 #[cfg(test)]
 mod tests {
-	use super::*;
-	use crate::{decode, ParamType, Token};
-	use hex_literal::hex;
 	use std::prelude::v1::{Box, ToOwned};
+
+	use hex_literal::hex;
+
+	use crate::{decode, ParamType, Token};
+
+	use super::*;
 
 	#[test]
 	fn decode_from_empty_byte_slice() {

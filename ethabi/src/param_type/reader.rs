@@ -6,11 +6,12 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-use crate::{Error, ParamType};
-use std::string::String;
-use std::boxed::Box;
 use std::borrow::ToOwned;
-use std::prelude::v1::Vec;
+use std::boxed::Box;
+use std::string::String;
+use std::vec::Vec;
+
+use crate::{Error, ParamType};
 
 /// Used to convert param type represented as a string to rust structure.
 pub struct Reader;
@@ -160,9 +161,11 @@ impl Reader {
 
 #[cfg(test)]
 mod tests {
-	use super::Reader;
-	use crate::ParamType;
 	use std::prelude::v1::Box;
+
+	use crate::ParamType;
+
+	use super::Reader;
 
 	#[test]
 	fn test_read_param() {

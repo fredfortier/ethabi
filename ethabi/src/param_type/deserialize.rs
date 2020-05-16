@@ -6,12 +6,13 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-use super::{ParamType, Reader};
-use serde::de::{Error as SerdeError, Visitor};
 use serde::{Deserialize, Deserializer};
+use serde::de::{Error as SerdeError, Visitor};
+use std::boxed::Box;
 use std::fmt;
 use std::string::String;
-use std::boxed::Box;
+
+use super::{ParamType, Reader};
 
 impl<'a> Deserialize<'a> for ParamType {
 	fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
@@ -48,8 +49,9 @@ impl<'a> Visitor<'a> for ParamTypeVisitor {
 
 #[cfg(test)]
 mod tests {
-	use crate::ParamType;
 	use serde_json;
+
+	use crate::ParamType;
 
 	#[test]
 	fn param_type_deserialization() {
