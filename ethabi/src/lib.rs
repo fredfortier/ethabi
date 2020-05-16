@@ -8,9 +8,11 @@
 
 //! Ethereum ABI encoding decoding library.
 #![warn(missing_docs)]
-#![no_std]
 
+#![no_std]
 #![feature(slice_concat_trait)]
+
+extern crate sgx_tstd as std;
 
 #[macro_use]
 extern crate error_chain;
@@ -25,7 +27,6 @@ extern crate rustc_hex as hex;
 extern crate serde;
 extern crate serde_json;
 #[macro_use]
-extern crate sgx_tstd as std;
 extern crate tiny_keccak;
 extern crate uint;
 
