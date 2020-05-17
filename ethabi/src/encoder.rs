@@ -12,6 +12,7 @@ use std::vec::Vec;
 
 use crate::{Bytes, Token, Word};
 use crate::util::pad_u32;
+use regex::internal::Input;
 
 fn pad_bytes(bytes: &[u8]) -> Vec<Word> {
 	let mut result = vec![pad_u32(bytes.len() as u32)];
@@ -182,6 +183,7 @@ mod tests {
 
 	use crate::{encode, Token};
 	use crate::util::pad_u32;
+	use fixed_hash::alloc_::prelude::v1::ToOwned;
 
 	#[test]
 	fn encode_address() {
