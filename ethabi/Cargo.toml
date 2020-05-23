@@ -17,6 +17,7 @@ serde = { git = "https://github.com/mesalock-linux/serde-sgx.git", features = ["
 serde_json = { git = "https://github.com/mesalock-linux/serde-json-sgx.git" }
 sgx_tstd = { git = "https://github.com/apache/teaclave-sgx-sdk.git", rev = "v1.1.2" , features = ["backtrace"] }
 uint = { git = "https://github.com/fredfortier/parity-common.git", default-features = false }
+regex = { git = "https://github.com/mesalock-linux/regex-sgx.git", features = ["std"]}
 
 
 [dev-dependencies]

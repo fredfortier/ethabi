@@ -30,6 +30,7 @@ extern crate serde_json;
 #[macro_use]
 extern crate tiny_keccak;
 // extern crate uint;
+extern crate regex;
 
 use std::vec::Vec;
 
